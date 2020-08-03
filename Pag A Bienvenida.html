@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>CAJERO BANCO BONITO</title>
+    <style>
+
+#Bienvenida {
+
+  background-image: url('IMG/FONDO_BANCO.jpg'); width: 100%; height: 100%
+
+}
+</style>
+  <link rel="stylesheet" href="estilo_calculadora.css" />
+  </head>
+  <body>
+
+    <div id="p_bienvenida">
+    <h1>  Bienvenido al Cajero automático de Banco Bonito </h1>
+    <h2> Ingrese su nombre de usuario y contraseña por favor </h2>
+    <br>
+    <br> USUARIO : <input type="text" id="usuario_input" > </br>
+    <br>
+    <br> CONTRASEÑA : <input type="text" id="contrasena_input" > </br>
+    <br>
+    <button type="button" id="boton_ingreso"
+    onclick="pasar_a_acciones()">
+    INGRESAR</button>
+  </div>
+
+
+  <div id="p_acciones_clientes" style="display:none">
+    <h1> Favor seleccionar la actividad a realizar </h1>
+    <br>
+    <button type="button" id="boton_retiro"
+    onclick= "pasar_a_retiros()">
+    RETIROS</button>
+    <br>
+    <button type="button"
+    onclick= window.location="depositos.html">
+    DEPÓSITOS</button>
+    <br>
+    <button type="button"
+    onclick= window.location="consulta_saldo.html">
+    CONSULTA SALDO</button>
+  </div>
+
+    <div id="p_retiros" style="display:none">
+    <h1>  Bienvenido al Cajero automático de Banco Bonito </h1>
+    <h2> Ingrese el monto a retirar </h2>
+    <h3> El límite de retiro es de 15.000 lempiras </h2>
+    <br>
+    <div class="calculator">
+      <input type="number" class="calculator-screen" id="monto" value="" disabled />
+
+      <div class="calculator-keys">
+
+        <button type="button" value="7">7</button>
+        <button type="button" value="8">8</button>
+        <button type="button" value="9">9</button>
+
+        <button type="button" value="4">4</button>
+        <button type="button" value="5">5</button>
+        <button type="button" value="6">6</button>
+
+        <button type="button" value="1">1</button>
+        <button type="button" value="2">2</button>
+        <button type="button" value="3">3</button>
+
+        <button type="button" value="0">0</button>
+        <button type="button" class="all-clear" value="all-clear">AC</button>
+        <button type="button" style="background-color: #2e86c0; border-color: #337cac;color: #fff;" id="boton_retiro"
+        onclick="retirar_dinero()">
+        RETIRAR</button>
+
+      </div>
+      <p> "Billetes de a 500" <input type="number" id="bretirados500" value="" disabled /> </p>
+      <p> "Billetes de a 100" <input type="number" id="bretirados100" value="" disabled /> </p>
+      <p> "Billetes de a 50" <input type="number" id="bretirados50" value="" disabled /> </p>
+      <p> "Billetes de a 20" <input type="number" id="bretirados20" value="" disabled /> </p>
+      <p> "Billetes de a 10" <input type="number" id="bretirados10" value="" disabled /> </p>
+      <button type="button" id="boton_ingreso"
+      onclick="retirar_billetes()">
+      RETIRAR DINERO</button>
+    </div>
+    <br>
+
+  </div>
+
+  <div id="p_acciones_clientes" style="display:none">
+    <h1> Favor seleccionar la actividad a realizar </h1>
+    <br>
+    <button type="button" id="boton_retiro"
+    onclick= "pasar_a_retiros()">
+    RETIROS</button>
+    <br>
+    <button type="button"
+    onclick= window.location="depositos.html">
+    DEPÓSITOS</button>
+    <br>
+    <button type="button"
+    onclick= window.location="consulta_saldo.html">
+    CONSULTA SALDO</button>
+  </div>
+
+
+
+<script src="myscripts.js"></script>
+
+  </body>
+</html>
