@@ -54,6 +54,7 @@ function pasar_a_retiros(){
   document.getElementById('p_bienvenida').style = "display:none";
   document.getElementById('p_acciones_clientes').style = "display:none";
   document.getElementById('p_retiros').style = "display:block";
+  document.getElementById('p_saldos').style = "display:none";
 }
 
 function pasar_a_depositos(){
@@ -61,6 +62,7 @@ function pasar_a_depositos(){
   document.getElementById('p_bienvenida').style = "display:none";
   document.getElementById('p_acciones_clientes').style = "display:none";
   document.getElementById('p_retiros').style = "display:block";
+  document.getElementById('p_saldos').style = "display:none";
 }
 
 
@@ -200,7 +202,7 @@ function retirar_dinero(){
     }
     else {
       //Aquí restamos el saldo de la cuenta del cliente
-      usuarios["jeova1"]["pisto"] -= cantidad_retiro;
+      usuarios[cliente_usuario]["pisto"] -= cantidad_retiro;
       //Aqui van las cantidades de billetes
       var billetes_r = [];
       billetes_r["r_quinientos"]=0;
@@ -279,4 +281,23 @@ function retirar_billetes(){
   document.getElementById('p_retiros').style = "display:none";
   document.getElementById('usuario_input').value = "";
   document.getElementById('contrasena_input').value = "";
+}
+
+function pasar_a_saldos(){
+  document.getElementById('p_bienvenida').style = "display:none";
+  document.getElementById('p_acciones_clientes').style = "display:none";
+  document.getElementById('p_retiros').style = "display:none";
+  document.getElementById('p_saldos').style = "display:block";
+  document.getElementById('nombre_cliente').innerHTML += '<br>' + cliente_usuario;
+  document.getElementById('saldo_usuario').value = usuarios[cliente_usuario]["pisto"];
+}
+
+function salir(){
+alert("GRACIAS POR USAR BANCO BONITO");
+document.getElementById('p_bienvenida').style = "display:block";
+document.getElementById('p_acciones_clientes').style = "display:none";
+document.getElementById('p_retiros').style = "display:none";
+document.getElementById('p_saldos').style = "display:none";
+document.getElementById('usuario_input').value = "";
+document.getElementById('contrasena_input').value = "";
 }
