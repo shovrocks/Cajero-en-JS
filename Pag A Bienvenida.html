@@ -9,7 +9,7 @@
 
       background-image: url('IMG/FONDO_BANCO.jpg');
       width: 100%;
-      height: 100%
+      height: 100%;
     }
   </style>
   <link rel="stylesheet" href="estilo_calculadora.css" />
@@ -29,14 +29,24 @@
       INGRESAR</button>
   </div>
 
+  <div id="p_acciones_admin" style="display:none">
+    <h1> BANCO BONITO ADMINISTRACIÓN </h1>
+    <br>
+    <br> DINERO EN CAJERO : <input type="text" id="dinero_en_cajero"> </br>
+    <button type="button" id="boton_gestionar_billetes" onclick="pasar_a_gestion()">
+      GESTIONAR BILLETES</button>
+    <br>
+    <button type="button" onclick="salir()">
+      SALIR</button>
+  </div>
 
   <div id="p_acciones_clientes" style="display:none">
     <h1> Favor seleccionar la actividad a realizar </h1>
     <br>
-    <button type="button" id="boton_retiro" onclick="pasar_a_retiros()">
+    <button type="button" id="boton_retiros" onclick="pasar_a_retiros()">
       RETIROS</button>
     <br>
-    <button type="button" onclick=window.location="depositos.html">
+    <button type="button" onclick="pasar_a_depositos()">
       DEPÓSITOS</button>
     <br>
     <button type="button" onclick="pasar_a_saldos()">
@@ -93,13 +103,42 @@
     <button type="button" id="boton_retiro" onclick=pasar_a_retiros()>
       RETIROS</button>
     <br>
-    <button type="button" onclick=window.location="depositos.html">
+    <button type="button" onclick=pasar_a_depositos()>
       DEPÓSITOS</button>
     <br>
     <button type="button" onclick=salir()>
       SALIR</button>
   </div>
 
+  <div id="p_depositos" style="display:none">
+    <div id="p_depositos_clientes" style="display:none">
+    <h1> Favor indique cantidad de billetes a depositar </h1>
+    </div>
+    <div id="p_depositos_admin" style="display:none">
+    <h1> Favor indique cantidad de billetes a depositar o retirar del cajero </h1>
+    </div>
+    <br>
+    <p> "Billetes de a 500" <input type="number" id="bdepositados500" value="0" /> </p>
+    <p> "Billetes de a 100" <input type="number" id="bdepositados100" value="0" /> </p>
+    <p> "Billetes de a 50" <input type="number" id="bdepositados50" value="0" /> </p>
+    <p> "Billetes de a 20" <input type="number" id="bdepositados20" value="0"> </p>
+    <p> "Billetes de a 10" <input type="number" id="bdepositados10" value="0" /> </p>
+    <button type="button" id="boton_retiro" onclick="realizar_deposito()">
+      DEPOSITAR</button>
+    <br>
+    <div id="p_boton_admin" style="display:none">
+      <button type="button" id="boton_retiro" onclick="realizar_retiro_admin()">
+        RETIRAR</button>
+      <br>
+    </div>
+    <div id="p_boton_cliente" style="display:none">
+    <button type="button" onclick="pasar_a_saldos()">
+      CONSULTA SALDO</button>
+    <br>
+    </div>
+    <button type="button" onclick=salir()>
+      SALIR</button>
+  </div>
   <script src="myscripts.js"></script>
 
 </body>
